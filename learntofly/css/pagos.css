@@ -1,0 +1,196 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root {
+    --primary-color: #415a77;
+    --secondary-color: #1b263b;
+    --color-text: #e0e1dd;
+    --secondary-text: #0d1b2a;
+}
+* {
+    font-family: sans-serif;
+}
+  
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-text);
+    color: var(--secondary-text);
+    position: relative;
+    background-image: url("../assets/img/avion.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.main_img {
+    height: 250px;
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.main_img img {
+    height: 90%;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+}
+.container_pago {
+    width: 100%;
+    background-color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    border-bo: 2px solid var(--primary-color);
+    border-radius: 28px;
+    gap: 10px;
+    font-size: 1rem !important;
+    height: auto;
+    padding-bottom: 2rem;
+}
+.container_pago picture {
+    width: 100%;
+    height: 400px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container_pago picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px 28px 0 0;
+}
+.container_pago h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer_img {
+    height: 300px;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+.footer_img_container {
+    object-fit: contain;
+    height: 100px;
+    width: 100px;
+}
+.footer_img_container img {
+    height: 90%;
+    mix-blend-mode: multiply;
+}
+
+.container_datos {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0.1rem 0;
+}
+.container_datos label {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+}
+.container_datos input {
+    width: 100%;
+    height: 2rem;
+    border: none;
+    background-color: #E0E1DD;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 1.2rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    outline: none;
+    cursor: initial;
+}
+
+#paypal-button-container {
+    width: 90%;
+    gap: 10px;
+    padding: 4rem 0;
+}
+
