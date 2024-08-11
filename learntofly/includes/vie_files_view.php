@@ -39,7 +39,7 @@
                 <h1 class="card-title">Documentos Subidos</h1>
             </span>
             <div>
-                <button onclick="cambiar_vista_home()" class="btn btn-success">Inicio</button>
+                <button onclick="volver_home()" class="btn btn-success">Inicio</button>
                 <button onclick="cambiar_vista_subir_archivo()" class="btn btn-success">Subir Documentos</button>
             </div>
         </div>
@@ -56,38 +56,36 @@
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
-            <tbody id="documents-body">
-                <!-- Los registros se cargarán aquí mediante AJAX -->
-            </tbody>
+            <tbody id="documents-body"></tbody>
         </table>
         <nav>
-            <ul class="pagination" id="pagination-links">
-                <!-- Los enlaces de paginación se generarán aquí -->
-            </ul>
+            <ul class="pagination" id="pagination-links"></ul>
         </nav>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        function cambiar_vista_ver_archivos(page = 1){
+        function cargar_files(page = 1){
             $.ajax({
-                url: `includes/view_files.php?page=${page}`, // URL de tu archivo PHP
-                type: 'GET', // Método HTTP para la solicitud (puede ser GET o POST según lo que necesites)
-                dataType: 'html', // Tipo de datos esperado en la respuesta
+                url: `includes/view_files.php?page=${page}`,
+                type: 'GET',
+                dataType: 'html',
                 success: function(response) {
-                    $('#documents-body').html(response); // Mostrar la respuesta en el tbody con id "documents-body"
+                    $('#documents-body').html(response);
                 },
                 error: function(xhr, status, error) {
-                    console.error('Error al abrir el archivo PHP:', error); // Manejar errores
+                    console.error('Error al abrir el archivo PHP:', error);
                 }
             });
         }
 
         // Cargar la vista por defecto (página 1) al inicio
         $(document).ready(function() {
-            cambiar_vista_ver_archivos(1);
+            cargar_files(1);
         });
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/events.js"></script> 
+    <script src="app.js"></script>
 </body>
 </html>

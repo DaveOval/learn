@@ -54,9 +54,9 @@ function cambiar_vista_subir_archivo(){
         }
       });
 }
-function cambiar_vista_ver_archivos(page = 1){
+function cambiar_vista_ver_archivos(){
     $.ajax({
-        url: `./includes/vie_files_view.php?page=${page}`, // URL de tu archivo PHP
+        url: `./includes/vie_files_view.php`, // URL de tu archivo PHP
         type: 'GET', // Método HTTP para la solicitud (puede ser GET o POST según lo que necesites)
         dataType: 'html', // Tipo de datos esperado en la respuesta
         success: function(response) {
