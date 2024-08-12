@@ -12,11 +12,15 @@ $row = $result->fetch_assoc();
 $totalRecords = $row['total'];
 $totalPages = ceil($totalRecords / $limit);
 
-$query = "SELECT r.nombre_comercial, r.representante_legal, d.tipo_documento, d.fecha_subida, d.nombre_archivo
+/* $query = "SELECT r.nombre_comercial, r.representante_legal, d.tipo_documento, d.fecha_subida, d.nombre_archivo
           FROM documentos d
           JOIN representantes r ON d.representante_id = r.id
           ORDER BY r.nombre_comercial, d.fecha_subida DESC
-          LIMIT $limit OFFSET $offset";
+          LIMIT $limit OFFSET $offset"; */
+$query = "SELECT r.nombre_comercial, r.representante_legal, d.tipo_documento, d.fecha_subida, d.nombre_archivo
+FROM documentos d
+JOIN representantes r ON d.representante_id = r.id
+ORDER BY r.nombre_comercial, d.fecha_subida DESC"; // Quitar LIMIT y OFFSET
 $result = $conn->query($query);
 
 if ($result) {
@@ -58,14 +62,14 @@ if ($result) {
                     <td>{$doc['tipo_documento']}</td>
                     <td>" . date('Y-m-d', strtotime($doc['fecha_subida'])) . "</td>
                     <td>
-                        <a href='descargar.php?archivo={$doc['nombre_archivo']}' class='btn btn-primary btn-sm'>Descargar</a>
+                        <a href='includes/uploads/{$doc['nombre_archivo']}' target='_blank' class='btn btn-primary btn-sm'>Ver documento</a>
                     </td>
                   </tr>";
         }
     }
 
     // Imprimir paginación
-    echo "<nav>
+    /* echo "<nav>
             <ul class='pagination'>";
     
     // Enlace de página anterior
@@ -87,6 +91,7 @@ if ($result) {
 
     echo "  </ul>
           </nav>";
+           */
 } else {
     echo "<tr><td colspan='5'>Error al recuperar documentos: " . $conn->error . "</td></tr>";
 }
