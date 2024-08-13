@@ -45,12 +45,8 @@
     <nav class="navbar">
         <div class="container-fluid">
             <span class="navbar-text">
-                <h1 class="card-title">Bienvenido!</h1>
+                <h1 class="card-title">Learn to fly</h1>
             </span>
-            <div>
-                <button onclick="volver_home()" class="btn btn-success">Inicio</button>
-                <button onclick="cambiar_vista_ver_archivos()" class="btn btn-info">Ver Documentos</button>
-            </div>
         </div>
     </nav>
 
